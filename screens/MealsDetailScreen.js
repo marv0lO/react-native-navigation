@@ -7,7 +7,7 @@ import Subtitle from '../components/MealDetail/Subtitle';
 import MealDetails from '../components/MealDetails';
 import { MEALS } from '../data/dummy-data';
 
-function MealDetailScreen({ route, navigation }) {
+function MealsDetailScreen({ route, navigation }) {
   const mealId = route.params.mealId;
 
   const selectedMeal = MEALS.find((meal) => meal.id === mealId);
@@ -52,7 +52,7 @@ function MealDetailScreen({ route, navigation }) {
   );
 }
 
-export default MealDetailScreen;
+export default MealsDetailScreen;
 
 const styles = StyleSheet.create({
   rootContainer: {

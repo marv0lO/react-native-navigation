@@ -7,8 +7,8 @@ import { Ionicons } from '@expo/vector-icons';
 
 import CategoriesScreen from './screens/CategoriesScreen';
 import MealsOverviewScreen from './screens/MealsOverviewScreen';
-import MealDetailScreen from './screens/MealDetailScreen';
-import FavoritesScreen from './screens/FavoritesScreen';
+import MealsDetailScreen from './screens/MealsDetailScreen';
+import FavouritesScreen from './screens/FavouritesScreen';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -38,7 +38,7 @@ function DrawerNavigator() {
       />
       <Drawer.Screen
         name="Favorites"
-        component={FavoritesScreen}
+        component={FavouritesScreen}
         options={{
           drawerIcon: ({ color, size }) => (
             <Ionicons name="star" color={color} size={size} />
@@ -63,6 +63,7 @@ export default function App() {
         >
           <Stack.Screen
             name="Drawer"
+            // DrawerNavigator is nested inside Stack Screen
             component={DrawerNavigator}
             options={{
               headerShown: false,
@@ -71,7 +72,7 @@ export default function App() {
           <Stack.Screen name="MealsOverview" component={MealsOverviewScreen} />
           <Stack.Screen
             name="MealDetail"
-            component={MealDetailScreen}
+            component={MealsDetailScreen}
             options={{
               title: 'About the Meal',
             }}
